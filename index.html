@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Korea House Ninano | Authentic Korean Cuisine in Accra</title>
+  <meta name="description" content="Korea House Ninano — the most authentic Korean cuisine in Ghana. All-you-can-eat Friday Korean buffet, GH₵99 lunch Value Menu, live music Friday nights. Osu & East Legon, Accra.">
+  <meta name="theme-color" content="#c8102e">
+  <meta property="og:title" content="Korea House Ninano — Authentic Korean Cuisine in Ghana">
+  <meta property="og:description" content="Friday Korean buffet, GH₵99 Value Menu lunches and live music in Osu & East Legon.">
+  <meta property="og:image" content="assets/img/tteokbokki-bowl.jpg">
+  <link rel="icon" href="assets/img/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Caveat:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="top">
+    <div class="nav__inner">
+      <a href="#top" class="brand" aria-label="Korea House Ninano home">
+        <img src="assets/img/logo.jpg" alt="" width="44" height="44">
+        <span><strong>Korea House</strong><em>Ninano</em></span>
+      </a>
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="nav-links" class="nav__links" aria-label="Main">
+        <a href="#value">Value Menu</a>
+        <a href="#menu">Menu</a>
+        <a href="#buffet">Friday Buffet</a>
+        <a href="#nights">Friday Nights</a>
+        <a href="#locations">Locations</a>
+        <a href="#careers">Careers</a>
+        <a href="#reserve" class="btn btn--sm btn--red">Reserve</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <video class="hero__video" autoplay muted loop playsinline poster="assets/video/tteokbokki-poster.jpg" aria-hidden="true">
+        <source src="assets/video/tteokbokki.mp4" type="video/mp4">
+      </video>
+      <div class="hero__shade"></div>
+      <div class="hero__content">
+        <p class="eyebrow">안녕하세요 · Welcome to Ninano</p>
+        <h1>The most authentic<br><span>Korean cuisine</span> in Ghana</h1>
+        <p class="hero__lead">Sizzling bulgogi, spicy tteokbokki, hand-rolled kimbap and an all-you-can-eat Friday buffet — right here in Osu &amp; East Legon.</p>
+        <div class="hero__cta">
+          <a href="#reserve" class="btn btn--red">Book a table</a>
+          <a href="#menu" class="btn btn--ghost">Explore the menu</a>
+        </div>
+        <div class="today" id="today" aria-live="polite">
+          <span class="today__dot"></span>
+          <span id="today-text">Loading today's special…</span>
+        </div>
+      </div>
+      <button class="hero__sound" id="hero-sound" aria-label="Unmute video">🔇</button>
+    </section>
+
+    <!-- ============ STATS ============ -->
+    <section class="stats" aria-label="Highlights">
+      <div><strong>15+</strong><span>buffet dishes every Friday</span></div>
+      <div><strong>GH₵99</strong><span>weekday lunch Value Menu</span></div>
+      <div><strong>2</strong><span>branches — Osu &amp; East Legon</span></div>
+      <div><strong>15.3K</strong><span>foodies on Instagram</span></div>
+    </section>
+
+    <!-- ============ VALUE MENU ============ -->
+    <section class="section" id="value">
+      <div class="section__head">
+        <p class="eyebrow">Lunch · 11:30 AM – 2:30 PM · Osu branch</p>
+        <h2>The GH₵99 Value Menu</h2>
+        <p>Great food, great prices. A different Korean lunch bowl every weekday — tap a day to see what's cooking.</p>
+      </div>
+
+      <div class="days" role="tablist" aria-label="Value menu days">
+        <button role="tab" data-day="1">Mon</button>
+        <button role="tab" data-day="2">Tue</button>
+        <button role="tab" data-day="3">Wed</button>
+        <button role="tab" data-day="4">Thu</button>
+        <button role="tab" data-day="5">Fri</button>
+      </div>
+
+      <article class="value-card" id="value-card" role="tabpanel" aria-live="polite">
+        <div class="value-card__img"><img id="value-img" src="assets/img/value-spicy-pork.jpg" alt=""></div>
+        <div class="value-card__body">
+          <span class="tag" id="value-tag">Every Monday</span>
+          <h3 id="value-name">Spicy Pork Rice Bowl</h3>
+          <p id="value-desc"></p>
+          <div class="price"><small>only</small> GH₵<b id="value-price">99</b></div>
+          <ul class="value-card__meta">
+            <li>🕦 11:30 AM – 2:30 PM</li>
+            <li>🍱 Lunch only</li>
+            <li>📍 Osu branch</li>
+          </ul>
+          <button class="btn btn--red" id="value-order">Order this on WhatsApp</button>
+        </div>
+      </article>
+    </section>
+
+    <!-- ============ MENU ============ -->
+    <section class="section section--cream" id="menu">
+      <div class="section__head">
+        <p class="eyebrow">Korean &amp; Japanese cuisine</p>
+        <h2>Our Menu</h2>
+        <p>Add dishes to your order list, then send it straight to us on WhatsApp for pickup or delivery.</p>
+      </div>
+
+      <div class="filters" role="group" aria-label="Filter menu">
+        <button class="chip is-active" data-filter="all">All</button>
+        <button class="chip" data-filter="rice">Rice &amp; Bowls</button>
+        <button class="chip" data-filter="noodles">Noodles</button>
+        <button class="chip" data-filter="grill">Mains &amp; Grill</button>
+        <button class="chip" data-filter="street">Street Food &amp; Sides</button>
+        <button class="chip" data-filter="spicy">🌶 Spicy</button>
+      </div>
+
+      <div class="menu-grid" id="menu-grid"></div>
+      <p class="note">Prices for the full à-la-carte menu are available in-store or on WhatsApp. Value Menu items are GH₵99 at lunch (Osu).</p>
+    </section>
+
+    <!-- ============ BUFFET ============ -->
+    <section class="section buffet" id="buffet">
+      <div class="buffet__grid">
+        <div>
+          <p class="eyebrow eyebrow--light">Every Friday · 6:30 PM · Osu branch</p>
+          <h2>All-you-can-eat<br>Korean Dinner Buffet</h2>
+          <p>15 dishes &amp; 3 desserts — fried chicken, japchae, bulgogi, kimbap, mandu dumplings, tteokbokki, kimchi pancakes and more. Book early and save.</p>
+
+          <div class="tiers">
+            <div class="tier"><span>Regular price</span><b>GH₵320</b></div>
+            <div class="tier"><span>Early deposit</span><b>GH₵290</b></div>
+            <div class="tier tier--hot"><span>3+ people with early deposit</span><b>GH₵260</b></div>
+          </div>
+          <p class="small">All prices are per person.</p>
+        </div>
+
+        <form class="calc" id="calc" aria-labelledby="calc-title">
+          <h3 id="calc-title">Buffet price calculator</h3>
+          <label for="guests">Number of guests: <output id="guests-out">2</output></label>
+          <input type="range" id="guests" min="1" max="20" value="2">
+          <div class="stepper">
+            <button type="button" data-step="-1" aria-label="One fewer guest">−</button>
+            <button type="button" data-step="1" aria-label="One more guest">+</button>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="deposit" checked>
+            <span class="switch__track"></span>
+            I'll pay an early deposit
+          </label>
+          <div class="calc__result">
+            <div><span>Per person</span><b id="pp">GH₵290</b></div>
+            <div><span>Total</span><b id="total">GH₵580</b></div>
+          </div>
+          <p class="calc__hint" id="calc-hint"></p>
+          <a class="btn btn--red btn--block" id="buffet-book" href="#reserve">Reserve buffet seats</a>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ FRIDAY NIGHTS ============ -->
+    <section class="section nights" id="nights">
+      <div class="nights__grid">
+        <div class="phone">
+          <video controls playsinline preload="none" poster="assets/video/friday-poster.jpg">
+            <source src="assets/video/friday-nights.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div>
+          <p class="eyebrow">Live music · Good vibes</p>
+          <h2>Friday Nights at Korea House Ninano</h2>
+          <p>Pair your buffet with live music on our stage. Bring the family, bring the friends — Friday nights at Ninano are for everyone, and sometimes even our youngest guests grab the mic.</p>
+          <p class="script">You only live once!</p>
+          <a href="#reserve" class="btn btn--red">Join us this Friday</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALLERY ============ -->
+    <section class="section section--cream" id="gallery">
+      <div class="section__head">
+        <p class="eyebrow">From our kitchen &amp; dining room</p>
+        <h2>Gallery</h2>
+      </div>
+      <div class="gallery" id="gallery-grid">
+        <button data-src="assets/img/tteokbokki-bowl.jpg" data-caption="Tteokbokki Noodle Bowl"><img src="assets/img/tteokbokki-bowl.jpg" alt="Tteokbokki noodle bowl with egg and fish cake" loading="lazy"></button>
+        <button data-src="assets/img/bibimbap.jpg" data-caption="Bibimbap"><img src="assets/img/bibimbap.jpg" alt="Bibimbap with fried egg and vegetables" loading="lazy"></button>
+        <button data-src="assets/img/japchae-beef.jpg" data-caption="Beef Japchae"><img src="assets/img/japchae-beef.jpg" alt="Glass noodles with beef" loading="lazy"></button>
+        <button data-src="assets/img/ninano-sign.jpg" data-caption="Welcome to Ninano"><img src="assets/img/ninano-sign.jpg" alt="Ninano Korean and Japanese cuisine entrance sign" loading="lazy"></button>
+        <button data-src="assets/img/kimbap.jpg" data-caption="Kimbap"><img src="assets/img/kimbap.jpg" alt="Kimbap rolls close-up" loading="lazy"></button>
+        <button data-src="assets/img/interior-1.jpg" data-caption="Our dining room"><img src="assets/img/interior-1.jpg" alt="Restaurant dining room" loading="lazy"></button>
+        <button data-src="assets/img/fried-rice.jpg" data-caption="Egg Fried Rice"><img src="assets/img/fried-rice.jpg" alt="Egg fried rice with peas and carrots" loading="lazy"></button>
+        <button data-src="assets/img/tteokbokki-table.jpg" data-caption="Lunch is served"><img src="assets/img/tteokbokki-table.jpg" alt="Tteokbokki bowl on a dining table" loading="lazy"></button>
+        <button data-src="assets/img/friday-stage.jpg" data-caption="Friday nights on stage"><img src="assets/img/friday-stage.jpg" alt="Live music stage on Friday night" loading="lazy"></button>
+      </div>
+    </section>
+
+    <!-- ============ RESERVE ============ -->
+    <section class="section reserve" id="reserve">
+      <div class="reserve__grid">
+        <div>
+          <p class="eyebrow eyebrow--light">Reservation Center</p>
+          <h2>Book your table</h2>
+          <p>Fill in the form and we'll open WhatsApp with your booking ready to send. Prefer to talk? Call our reservation center.</p>
+          <ul class="contact-list">
+            <li><a href="tel:+233577737711">📞 057 773 7711</a></li>
+            <li><a href="tel:+233577737722">📞 057 773 7722 <small>(Osu)</small></a></li>
+            <li><a href="tel:+233577737721">📞 057 773 7721 <small>(East Legon)</small></a></li>
+            <li><a href="https://wa.me/233545887048" target="_blank" rel="noopener">💬 WhatsApp +233 54 588 7048</a></li>
+          </ul>
+        </div>
+
+        <form class="form" id="reserve-form" novalidate>
+          <div class="field">
+            <label for="r-name">Your name</label>
+            <input id="r-name" name="name" required autocomplete="name" placeholder="e.g. Ama Mensah">
+          </div>
+          <div class="field">
+            <label for="r-phone">Phone</label>
+            <input id="r-phone" name="phone" type="tel" required autocomplete="tel" placeholder="024 000 0000">
+          </div>
+          <div class="field">
+            <label for="r-branch">Branch</label>
+            <select id="r-branch" name="branch">
+              <option>Osu</option>
+              <option>East Legon</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="r-type">Booking for</label>
+            <select id="r-type" name="type">
+              <option value="Table">À-la-carte table</option>
+              <option value="Friday Buffet">Friday Korean Buffet (6:30 PM, Osu)</option>
+              <option value="Value Menu Lunch">Value Menu lunch</option>
+              <option value="Private event">Birthday / private event</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="r-date">Date</label>
+            <input id="r-date" name="date" type="date" required>
+          </div>
+          <div class="field">
+            <label for="r-time">Time</label>
+            <input id="r-time" name="time" type="time" required value="18:30">
+          </div>
+          <div class="field">
+            <label for="r-guests">Guests</label>
+            <input id="r-guests" name="guests" type="number" min="1" max="60" value="2" required>
+          </div>
+          <div class="field field--check">
+            <label><input type="checkbox" id="r-deposit" name="deposit"> I'd like to pay an early deposit</label>
+          </div>
+          <div class="field field--full">
+            <label for="r-notes">Notes <small>(optional)</small></label>
+            <textarea id="r-notes" name="notes" rows="3" placeholder="Allergies, celebrations, seating preference…"></textarea>
+          </div>
+          <p class="form__msg field--full" id="r-msg" role="alert"></p>
+          <button class="btn btn--red btn--block field--full" type="submit">Send booking via WhatsApp</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ LOCATIONS ============ -->
+    <section class="section" id="locations">
+      <div class="section__head">
+        <p class="eyebrow">Come hungry</p>
+        <h2>Find us in Accra</h2>
+      </div>
+      <div class="loc-tabs" role="tablist">
+        <button role="tab" class="chip is-active" data-loc="osu" aria-selected="true">Osu</button>
+        <button role="tab" class="chip" data-loc="legon" aria-selected="false">East Legon</button>
+      </div>
+      <div class="loc">
+        <div class="loc__info" id="loc-info"></div>
+        <div class="loc__map">
+          <iframe id="loc-map" title="Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Korea+House+Ninano+Osu+Accra&output=embed"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CAREERS ============ -->
+    <section class="section section--cream" id="careers">
+      <div class="section__head">
+        <p class="eyebrow">Open vacancies</p>
+        <h2>Join the Ninano family</h2>
+        <p>Grow with us — you can be a manager in 5 years earning up to GH₵5,000.</p>
+      </div>
+      <div class="jobs">
+        <article class="job">
+          <img src="assets/img/vacancy.jpg" alt="" loading="lazy">
+          <div>
+            <h3>Dispatch Rider</h3>
+            <p class="job__pay">GH₵1,500 – 2,500 / month</p>
+            <p>📍 Osu · East Legon · Madina</p>
+            <a class="btn btn--sm btn--red" target="_blank" rel="noopener" href="https://wa.me/233577737711?text=Hello%20Korea%20House%20Ninano%2C%20I%27d%20like%20to%20apply%20for%20the%20Dispatch%20Rider%20role.%20My%20CV%20is%20attached.">Apply on WhatsApp</a>
+          </div>
+        </article>
+        <article class="job">
+          <img src="assets/img/hiring.jpg" alt="" loading="lazy">
+          <div>
+            <h3>Driver</h3>
+            <p class="job__pay">GH₵1,700 – 2,500 / month</p>
+            <p>📍 Madina · East Legon · Osu</p>
+            <a class="btn btn--sm btn--red" target="_blank" rel="noopener" href="https://wa.me/233577737715?text=Hello%20Korea%20House%20Ninano%2C%20I%27d%20like%20to%20apply%20for%20the%20Driver%20role.%20My%20CV%20is%20attached.">Apply on WhatsApp</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="brand brand--footer">
+        <img src="assets/img/logo.jpg" alt="" width="56" height="56">
+        <span><strong>Korea House</strong><em>Ninano · Restaurant &amp; Bar</em></span>
+      </div>
+      <p>Authentic Korean cuisine in Ghana. Follow us for events and coupons.</p>
+      <div class="socials">
+        <a href="https://www.instagram.com/korea_house_ninano/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.facebook.com/NinanoGhana" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://wa.me/233545887048" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+      <p class="small">© <span id="year"></span> Korea House Ninano. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ============ FLOATING UI ============ -->
+  <a class="fab" href="https://wa.me/233545887048" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><path fill="currentColor" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3Zm0 23.7a10.7 10.7 0 0 1-5.5-1.5l-.4-.2-3.9 1 1-3.8-.3-.4A10.7 10.7 0 1 1 16 26.7Zm5.9-8c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.5 6.5 0 0 0 1.3 3.4 14.6 14.6 0 0 0 5.7 5c2.1.9 2.9 1 4 .8a3.4 3.4 0 0 0 2.2-1.6 2.8 2.8 0 0 0 .2-1.6c-.1-.1-.3-.2-.6-.3Z"/></svg>
+  </a>
+
+  <aside class="cart" id="cart" aria-label="Your order list" hidden>
+    <button class="cart__toggle" id="cart-toggle" aria-expanded="false">🛒 <span id="cart-count">0</span> item(s) · View order</button>
+    <div class="cart__panel" id="cart-panel" hidden>
+      <h3>Your order list</h3>
+      <ul id="cart-items"></ul>
+      <label class="field">Branch
+        <select id="cart-branch"><option>Osu</option><option>East Legon</option></select>
+      </label>
+      <label class="field">Pickup or delivery
+        <select id="cart-mode"><option>Pickup</option><option>Delivery</option></select>
+      </label>
+      <button class="btn btn--red btn--block" id="cart-send">Send order on WhatsApp</button>
+      <button class="link" id="cart-clear">Clear list</button>
+    </div>
+  </aside>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox__close" aria-label="Close">×</button>
+    <button class="lightbox__nav lightbox__prev" aria-label="Previous">‹</button>
+    <figure><img id="lb-img" alt=""><figcaption id="lb-cap"></figcaption></figure>
+    <button class="lightbox__nav lightbox__next" aria-label="Next">›</button>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
