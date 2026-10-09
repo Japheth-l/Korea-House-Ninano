@@ -47,7 +47,7 @@
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) heroVideo.pause();
   soundBtn.addEventListener("click", () => {
     heroVideo.muted = !heroVideo.muted;
-    if (!heroVideo.muted) heroVideo.play();
+    if (!heroVideo.muted) heroVideo.play().catch(() => {});
     soundBtn.textContent = heroVideo.muted ? "🔇" : "🔊";
     soundBtn.setAttribute("aria-label", heroVideo.muted ? "Unmute video" : "Mute video");
   });
@@ -55,6 +55,7 @@
   /* ---------------- Value menu ---------------- */
   const VALUE = {
     1: { name: "Spicy Pork Rice Bowl", tag: "Every Monday", img: "assets/img/value-spicy-pork.jpg",
+      video: "assets/video/spicy-pork.mp4", poster: "assets/video/spicy-pork-poster.jpg",
       desc: "Tender pork stir-fried in a fiery gochujang glaze, served over steamed rice with kimchi on the side." },
     2: { name: "Japchae Rice Bowl", tag: "Every Tuesday", img: "assets/img/value-japchae.jpg",
       desc: "Silky sweet-potato glass noodles tossed with vegetables, egg ribbons and sesame over rice. Bold flavours, fresh ingredients." },
@@ -63,6 +64,7 @@
     4: { name: "Coming soon…", tag: "Thursday", img: "assets/img/buffet-dinner.jpg", price: null,
       desc: "Our next Value Menu dish is on the way. Follow @korea_house_ninano to be the first to know — and guess the dish!" },
     5: { name: "Tteokbokki Noodle Bowl", tag: "Every Friday · New!", img: "assets/img/value-menu-tteokbokki.jpg",
+      video: "assets/video/tteokbokki.mp4", poster: "assets/video/tteokbokki-poster.jpg",
       desc: "Spicy, chewy, delicious. Rice cakes, fish cake and noodles in a sweet-hot red sauce, topped with a soft-boiled egg. Launching Friday 9th October." },
   };
   const dayBtns = $$(".days button");
@@ -80,6 +82,13 @@
       img.onload = () => img.classList.remove("is-swapping");
       if (img.complete) img.classList.remove("is-swapping");
     }, 150);
+    const vid = $("#value-video");
+    const play = $("#value-play");
+    vid.pause();
+    vid.hidden = true;
+    img.hidden = false;
+    play.hidden = !v.video;
+    play.textContent = "▶ Watch the video";
     $("#value-name").textContent = v.name;
     $("#value-tag").textContent = v.tag;
     $("#value-desc").textContent = v.desc;
@@ -88,6 +97,24 @@
     $("#value-order").hidden = !hasPrice;
   };
   dayBtns.forEach((b) => b.addEventListener("click", () => showDay(+b.dataset.day)));
+  $("#value-play").addEventListener("click", () => {
+    const v = VALUE[currentDay];
+    const vid = $("#value-video");
+    const play = $("#value-play");
+    if (vid.hidden) {
+      if (vid.getAttribute("src") !== v.video) { vid.src = v.video; vid.poster = v.poster; }
+      vid.hidden = false;
+      $("#value-img").hidden = true;
+      vid.play().catch(() => {});
+      play.textContent = "✕ Show the poster";
+    } else {
+      vid.pause();
+      vid.hidden = true;
+      $("#value-img").hidden = false;
+      play.textContent = "▶ Watch the video";
+    }
+  });
+  $("#value-video").addEventListener("click", (e) => { e.target.muted = !e.target.muted; });
   $("#value-order").addEventListener("click", () => {
     openWA(`Hello Korea House Ninano! I'd like to order the ${VALUE[currentDay].name} (GH₵99 Value Menu) for lunch at the Osu branch.`);
   });
@@ -114,7 +141,7 @@
       desc: "Rice bowl topped with seasoned vegetables, beef, a fried egg and gochujang." },
     { id: "bulgogi-bowl", name: "Bulgogi Rice Bowl", ko: "불고기 덮밥", cat: ["rice", "grill"], img: "assets/img/value-bulgogi.jpg", price: "GH₵99 Wed lunch",
       desc: "Sweet soy-marinated beef with onions over steamed rice." },
-    { id: "spicy-pork", name: "Spicy Pork Rice Bowl", ko: "제육 덮밥", cat: ["rice", "spicy"], img: "assets/img/value-spicy-pork.jpg", price: "GH₵99 Mon lunch",
+    { id: "spicy-pork", name: "Spicy Pork Rice Bowl", ko: "제육 덮밥", cat: ["rice", "spicy"], img: "assets/img/spicy-pork-bowl.jpg", price: "GH₵99 Mon lunch",
       desc: "Pork in a fiery gochujang sauce with rice." },
     { id: "fried-rice", name: "Kimchi / Egg Fried Rice", ko: "볶음밥", cat: ["rice"], img: "assets/img/fried-rice.jpg",
       desc: "Wok-fried rice with egg, peas and carrots — ask for the kimchi version." },
